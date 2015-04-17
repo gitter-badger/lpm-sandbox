@@ -7,7 +7,7 @@ Development tools
 -----------------------
 
 * VTK-6.2
-* cmake
+* cmake + cmake-gui
 * g++
 * flex
 * bison
