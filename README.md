@@ -30,3 +30,10 @@ Docker container
 ----------------
 
 The Linux distribution used is Debian Jessie. The dockerfile is based on the debian “quasi-official” version (https://registry.hub.docker.com/_/debian/).
+
+
+You can pull our current container version using:
+
+```
+docker pull gogo40/lpm_sandbox
+```
