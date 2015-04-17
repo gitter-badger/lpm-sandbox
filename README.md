@@ -3,15 +3,15 @@ This repository contains a basic environment to implement geo-statistics algorit
 
 In this image, you can found:
 
-VTK-6.2
-cmake
-g++
-python-2.7-dev
-boost
-eigen
-git
-gedit - a graphical text editor
-qt-5.4
+* VTK-6.2
+* cmake
+* g++
+* python-2.7-dev
+* boost
+* eigen
+* git
+* gedit - a graphical text editor
+* qt-5.4
 
 Docker container
 ----------------
