@@ -37,3 +37,10 @@ You can pull our current container version using:
 ```
 $ docker pull gogo40/lpm_sandbox
 ```
+
+But, you can create a new image using:
+
+
+```
+$sudo docker build -t lpm_sandbox docker
+```
