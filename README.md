@@ -35,5 +35,5 @@ The Linux distribution used is Debian Jessie. The dockerfile is based on the deb
 You can pull our current container version using:
 
 ```
-docker pull gogo40/lpm_sandbox
+$ docker pull gogo40/lpm_sandbox
 ```
