@@ -10,7 +10,7 @@ RUN apt-get -y dist-upgrade
 
 # Install base packages
 RUN apt-get install -y g++ cmake git make libboost-all-dev cmake-gui supervisor openssh-server gedit wget bash
-RUN apt-get install -qqy x11-apps flex bison libgl1-mesa-dev libglu1-mesa-dev libxt-dev
+RUN apt-get install -qqy x11-apps flex bison libgl1-mesa-dev libglu1-mesa-dev libxt-dev libpulse-dev gstreamer1.0 libgstreamer-plugins-base1.0-0
 
 RUN apt-get install -y x11vnc xvfb 
 RUN mkdir ~/.vnc
