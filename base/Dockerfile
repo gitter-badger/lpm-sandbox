@@ -9,13 +9,16 @@ RUN apt-get -qqy upgrade
 RUN apt-get -qqy dist-upgrade
 
 # Install base packages
-RUN apt-get install -qqy g++ cmake git make libboost-all-dev cmake-gui supervisor openssh-server gedit wget bash libfftw3-dev x11-apps flex bison libgl1-mesa-dev libglu1-mesa-dev libxt-dev libpulse-dev gstreamer1.0 libgstreamer-plugins-base1.0-0 gstreamer0.10 libgstreamer-plugins-base0.10-0 x11vnc xvfb 
-RUN mkdir ~/.vnc
-
+RUN apt-get install -qqy g++ cmake git make 
+RUN apt-get install -qqy libboost-all-dev cmake-gui 
+RUN apt-get install -qqy supervisor openssh-server 
+RUN apt-get install -qqy gedit wget bash libfftw3-dev 
+RUN apt-get install -qqy x11-apps flex bison 
+RUN apt-get install -qqy libgl1-mesa-swx11-dev libglu1-mesa-dev 
+RUN apt-get install -qqy libxt-dev libpulse-dev 
+RUN apt-get install -qqy gstreamer0.10 libgstreamer-plugins-base0.10-0 xvfb 
 
 # Setup a password
-RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
-
 ENV DISPLAY :0
 
 ENV QT_X11_NO_MITSHM 1
