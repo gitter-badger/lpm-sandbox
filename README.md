@@ -44,3 +44,23 @@ But, you can create a new image using:
 ```
 $sudo docker build -t lpm_sandbox docker
 ```
+
+
+You can run the image using the script docker/run_docker.sh.
+
+Running a specific softwares
+----------------------------
+
+* AR2GEMS:
+
+```
+$cd docker
+$./run_docker.sh ar2gems
+```
+
+* QT CREATOR:
+
+```
+$cd docker
+$./run_docker.sh qtcreator
+```
