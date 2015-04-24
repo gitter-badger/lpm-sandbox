@@ -2,12 +2,6 @@ FROM debian:jessie
 
 MAINTAINER Maintaner Péricles Lopes Machado (gogo40)
 
-# Update image
-RUN apt-get update
-
-RUN apt-get -qqy upgrade
-RUN apt-get -qqy dist-upgrade
-
 # Install base packages
 RUN apt-get install -qqy g++ cmake git make 
 RUN apt-get install -qqy libboost-all-dev cmake-gui 
