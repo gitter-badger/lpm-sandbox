@@ -3,14 +3,14 @@ FROM debian:jessie
 MAINTAINER Maintaner Péricles Lopes Machado (gogo40)
 
 # Install base packages
-RUN apt-get install -qqy g++ cmake git make 
-RUN apt-get install -qqy libboost-all-dev cmake-gui 
-RUN apt-get install -qqy supervisor openssh-server 
-RUN apt-get install -qqy gedit wget bash libfftw3-dev 
-RUN apt-get install -qqy x11-apps flex bison 
-RUN apt-get install -qqy libgl1-mesa-swx11-dev libglu1-mesa-dev 
-RUN apt-get install -qqy libxt-dev libpulse-dev 
-RUN apt-get install -qqy gstreamer0.10 libgstreamer-plugins-base0.10-0 xvfb 
+RUN apt-get install -y g++ cmake git make 
+RUN apt-get install -y libboost-all-dev cmake-gui 
+RUN apt-get install -y supervisor openssh-server 
+RUN apt-get install -y gedit wget bash libfftw3-dev 
+RUN apt-get install -y x11-apps flex bison 
+RUN apt-get install -y libgl1-mesa-swx11-dev libglu1-mesa-dev 
+RUN apt-get install -y libxt-dev libpulse-dev 
+RUN apt-get install -y gstreamer0.10 libgstreamer-plugins-base0.10-0 xvfb 
 
 # Setup a password
 ENV DISPLAY :0
