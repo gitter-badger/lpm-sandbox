@@ -56,3 +56,11 @@ $./run_docker.sh ar2gems
 $cd docker
 $./run_docker.sh qtcreator
 ```
+
+* Bash:
+ 
+
+```
+$cd docker
+$./run_docker.sh
+```
