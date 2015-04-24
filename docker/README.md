@@ -3,21 +3,25 @@ This repository contains a basic environment to implement geo-statistics algorit
 In this image, you can found:
 
 Development tools
+-----------------
 
-VTK-6.2
-cmake
-g++
-flex
-bison
-python-2.7-dev
-boost
-eigen
-git
-gedit - a graphical text editor
-qt-5.4
+* VTK-6.2
+* cmake
+* g++
+* flex
+* bison
+* python-2.7-dev
+* boost
+* eigen
+* git
+* gedit - a graphical text editor
+* qt-5.4
+
 Geostatistics softwares
+-----------------------
 
-sgems (with lpm_ufrgs_plugins)
-gslib
-isatis
-The Linux distribution used is Debian Jessie. The dockerfile is based on the debian “quasi-official” version (https://registry.hub.docker.com/_/debian/).
+* sgems (with lpm_ufrgs_plugins)
+* gslib
+* isatis
+* 
+The Linux distribution is based on Debian Jessie. The dockerfile is based on the debian “quasi-official” version (https://registry.hub.docker.com/_/debian/).
