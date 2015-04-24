@@ -2,6 +2,9 @@ FROM debian:jessie
 
 MAINTAINER Maintaner Péricles Lopes Machado (gogo40)
 
+# Update apt-get
+RUN apt-get -y update
+
 # Install base packages
 RUN apt-get install -y g++ cmake git make 
 RUN apt-get install -y libboost-all-dev cmake-gui 
