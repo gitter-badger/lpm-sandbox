@@ -23,5 +23,5 @@ Geostatistics softwares
 * sgems (with lpm_ufrgs_plugins)
 * gslib
 * isatis
-* 
+
 The Linux distribution is based on Debian Jessie. The dockerfile is based on the debian “quasi-official” version (https://registry.hub.docker.com/_/debian/).
