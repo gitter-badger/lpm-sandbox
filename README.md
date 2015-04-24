@@ -32,21 +32,13 @@ Docker container
 The Linux distribution used is Debian Jessie. The dockerfile is based on debian “quasi-official” version (https://registry.hub.docker.com/_/debian/).
 
 
-You can pull our current container version using:
+You can pull our current container version  (gogo40/ar2gems_develop) using:
 
 ```
-$ docker pull gogo40/lpm_sandbox
+$ docker pull gogo40/ar2gems_develop
 ```
 
-But, you can create a new image using:
-
-
-```
-$sudo docker build -t lpm_sandbox docker
-```
-
-
-You can run the image using the script docker/run_docker.sh.
+But, you can create a new image using the script docker/build_docker.sh. And, you can run the image using the script docker/run_docker.sh. The image created is called 'gogo40/lpm_sandbox'.
 
 Running a specific softwares
 ----------------------------
