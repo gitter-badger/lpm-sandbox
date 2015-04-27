@@ -29,8 +29,6 @@ RUN chmod 777 qt-opensource-linux-x64-online.run
 # clone repositories
 
 RUN git clone https://github.com/Kitware/VTK.git
-#RUN git clone https://github.com/gogo40/ar2gems.git 
-#RUN git clone https://github.com/gogo40/lpm-ufrgs-sgems-plugins.git
 
 RUN mkdir ar2gems-build
 RUN mkdir lpm-ufrgs-sgems-plugins-build
