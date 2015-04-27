@@ -1,18 +1,29 @@
 FROM gogo40/lpm-sandbox:base
 
-#Add main files
+########################################################################################
+#Add source code files
+########################################################################################
+
 ADD ar2gems.zip /
 ADD lpm-ufrgs-sgems-plugins.zip /
-ADD install_plugins.sh /ar2gems-build/
 
+########################################################################################
 #Upgrade image
+########################################################################################
+
 RUN apt-get -y update
 RUN apt-get -y upgrade
 
+########################################################################################
 #Install unzip
+########################################################################################
+
 RUN apt-get -y install unzip
 
+########################################################################################
 #Install qt5 libraries
+########################################################################################
+
 RUN apt-get -y install \
 qtbase5-dev \
 qt5-qmake \
@@ -23,16 +34,26 @@ libqt5widgets5 \
 libqt5designer5 \
 libqt5designercomponents5 \
 libqt5gui5 \
-libqt5webkit5-dev 
+libqt5webkit5-dev \
+libqt5svg5
 
-
+########################################################################################
 #Unzip source codes
+########################################################################################
+
 RUN unzip ar2gems.zip
 RUN unzip lpm-ufrgs-sgems-plugins.zip
 
 RUN echo "Number of processors" && echo $(nproc)
 
+########################################################################################
 #build VTK
+########################################################################################
+
+WORKDIR VTK
+
+RUN git checkout v6.2.0.rc1
+
 WORKDIR vtk-build
 
 RUN cmake /VTK -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_TESTING:BOOL=OFF -DVTK_Group_Qt:BOOL=ON \
@@ -46,13 +67,59 @@ RUN cmake /VTK -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_TESTING:BOOL=OFF -DVTK_
 
 RUN make -j $(nproc)
 
+RUN make install
+
+########################################################################################
 #build ar2gems
+########################################################################################
+
+RUN apt-get -y install \
+libqt5svg5-dev \
+qtmultimedia5-dev \
+libqt5multimedia5 \
+qtcreator
+
+WORKDIR /ar2gems
+
+RUN cd /ar2gems && git checkout develop
+
 WORKDIR ar2gems-build
-#RUN
 
+RUN cmake /ar2gems -DCMAKE_BUILD_TYPE:STRING=Release 
+
+RUN make -j $(nproc)
+
+########################################################################################
 #build lpm-ufrgs-sgems-plugins
-WORKDIR lpm-ufrgs-sgems-plugins-build
-#RUN
+########################################################################################
 
+WORKDIR /lpm-ufrgs-sgems-plugins
+
+RUN cd /lpm-ufrgs-sgems-plugins && git checkout develop
+
+WORKDIR /lpm-ufrgs-sgems-plugins-build
+
+#RUN cmake /lpm-ufrgs-sgems-plugins -DCMAKE_BUILD_TYPE:STRING=Release \
+#-DAR2GEMS_BUILD_PATH:PATH=/ar2gems-build \
+#-DAR2GEMS_PATH:PATH=/ar2gems \
+#-DAR2GEMS_SOURCE_PATH:PATH=/ar2gems \
+#-DAR2GEMS_INCLUDE_DIR:PATH=/ar2gems \
+#-DBISON_EXECUTABLE:FILEPATH=/usr/bin/bison \
+#-DFLEX_EXECUTABLE:FILEPATH=/usr/bin/flex \
+#-DFLEX_INCLUDE_DIR:PATH=/usr/include
+
+#RUN make -j $(nproc)
+
+#Install plugins
+#WORKDIR /ar2gems-build
+
+#ADD install_plugins.sh /ar2gems-build/
+
+#RUN mkdir Release/bin/plugins
+#RUN mkdir Release/bin/plugins/designer
+#RUN mkdir Release/bin/plugins/Geostat
+
+#RUN ./install_plugins.sh
 
 WORKDIR /
+
