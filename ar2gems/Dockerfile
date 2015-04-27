@@ -50,9 +50,9 @@ RUN echo "Number of processors" && echo $(nproc)
 #Create build directories
 ########################################################################################
 
-RUN mkdir ar2gems-build
-RUN mkdir lpm-ufrgs-sgems-plugins-build
-RUN mkdir vtk-build
+RUN mkdir -p ar2gems-build
+RUN mkdir -p lpm-ufrgs-sgems-plugins-build
+RUN mkdir -p vtk-build
 
 ########################################################################################
 #build VTK
