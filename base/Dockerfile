@@ -24,9 +24,4 @@ ENV QT_X11_NO_MITSHM 1
 
 RUN git clone https://github.com/Kitware/VTK.git
 
-# create build directories
-RUN mkdir ar2gems-build
-RUN mkdir lpm-ufrgs-sgems-plugins-build
-RUN mkdir vtk-build
-
 WORKDIR /
