@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /ar2gems-build/Release/bin
+./ar2gems

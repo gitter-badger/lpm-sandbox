@@ -126,17 +126,19 @@ WORKDIR /ar2gems-build
 
 ADD install_plugins.sh /ar2gems-build/
 
-RUN cd ar2gems-build && \
+RUN cd /ar2gems-build && \
 mkdir Release/bin/plugins
 
-RUN cd ar2gems-build && \
+RUN cd /ar2gems-build && \
 mkdir Release/bin/plugins/designer
 
-RUN cd ar2gems-build && \
+RUN cd /ar2gems-build && \
 mkdir Release/bin/plugins/Geostat
 
-RUN cd ar2gems-build && \
+RUN cd /ar2gems-build && \
 ./install_plugins.sh
+
+ADD ar2gems /usr/bin/
 
 WORKDIR /
 
