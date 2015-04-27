@@ -28,3 +28,5 @@ RUN git clone https://github.com/Kitware/VTK.git
 RUN mkdir ar2gems-build
 RUN mkdir lpm-ufrgs-sgems-plugins-build
 RUN mkdir vtk-build
+
+WORKDIR /
