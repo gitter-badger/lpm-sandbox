@@ -20,16 +20,11 @@ ENV DISPLAY :0
 
 ENV QT_X11_NO_MITSHM 1
 
-# download qt5-online installer
-RUN wget http://download.qt.io/official_releases/online_installers/qt-opensource-linux-x64-online.run
-RUN chmod 777 qt-opensource-linux-x64-online.run
-
-# RUN ./qt-opensource-linux-x64-online.run
-
 # clone repositories
 
 RUN git clone https://github.com/Kitware/VTK.git
 
+# create build directories
 RUN mkdir ar2gems-build
 RUN mkdir lpm-ufrgs-sgems-plugins-build
 RUN mkdir vtk-build
