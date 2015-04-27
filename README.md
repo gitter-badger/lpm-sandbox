@@ -38,22 +38,22 @@ You can pull our current container version  (gogo40/ar2gems_develop) using:
 $ docker pull gogo40/ar2gems_develop
 ```
 
-But, you can create a new image using the script docker/build_docker.sh. And, you can run the image using the script docker/run_docker.sh. The image created is called 'gogo40/lpm_sandbox'.
+But, you can create a new image using the scripts base/build_docker.sh and ar2gems/build_docker.sh. And, you can run the image using the script run_docker.sh. The image created is called 'gogo40/lpm-sandbox'.
 
-Running a specific softwares
+Running a specific software
 ----------------------------
 
 * AR2GEMS:
 
 ```
-$cd docker
+$cd ar2gems
 $./run_docker.sh ar2gems
 ```
 
 * QT CREATOR:
 
 ```
-$cd docker
+$cd ar2gems
 $./run_docker.sh qtcreator
 ```
 
@@ -61,6 +61,6 @@ $./run_docker.sh qtcreator
  
 
 ```
-$cd docker
+$cd ar2gems
 $./run_docker.sh
 ```
