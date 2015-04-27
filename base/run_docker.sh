@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Opening bash..."
-IMG=gogo40/lpm-sandbox
+IMG=gogo40/lpm-sandbox:base
 
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
