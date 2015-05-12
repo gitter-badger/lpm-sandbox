@@ -110,7 +110,10 @@ make -j 8 #$(nproc)
 
 WORKDIR /lpm-ufrgs-sgems-plugins
 
-RUN cd /lpm-ufrgs-sgems-plugins 
+RUN cd /lpm-ufrgs-sgems-plugins && \
+cd CALCULATOR && \
+bison Parser.y && \
+flex Lexer.l
 
 WORKDIR /lpm-ufrgs-sgems-plugins-build
 
