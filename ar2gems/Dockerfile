@@ -77,7 +77,7 @@ cmake /VTK -DCMAKE_BUILD_TYPE:STRING=Release \
 
 
 RUN cd /vtk-build && \
-make -j $(nproc)
+make -j 8 #$(nproc)
 
 RUN cd /vtk-build && \
 make install
@@ -94,8 +94,7 @@ qtcreator
 
 WORKDIR /ar2gems
 
-RUN cd /ar2gems && \
-git checkout develop
+RUN cd /ar2gems 
 
 WORKDIR ar2gems-build
 
@@ -103,7 +102,7 @@ RUN cd /ar2gems-build && \
 cmake /ar2gems -DCMAKE_BUILD_TYPE:STRING=Release 
 
 RUN cd /ar2gems-build && \
-make -j $(nproc)
+make -j 8 #$(nproc)
 
 ########################################################################################
 #build lpm-ufrgs-sgems-plugins
@@ -111,8 +110,7 @@ make -j $(nproc)
 
 WORKDIR /lpm-ufrgs-sgems-plugins
 
-RUN cd /lpm-ufrgs-sgems-plugins && \
-git checkout develop
+RUN cd /lpm-ufrgs-sgems-plugins 
 
 WORKDIR /lpm-ufrgs-sgems-plugins-build
 
@@ -127,7 +125,7 @@ cmake /lpm-ufrgs-sgems-plugins -DCMAKE_BUILD_TYPE:STRING=Release \
 -DFLEX_INCLUDE_DIR:PATH=/usr/include
 
 RUN cd /lpm-ufrgs-sgems-plugins-build && \
-make -j $(nproc)
+make -j 8 #$(nproc)
 
 #Install plugins
 WORKDIR /ar2gems-build
