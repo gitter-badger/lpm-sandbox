@@ -27,6 +27,10 @@ RUN apt-get -y install unzip mingw32
 RUN apt-get -y install \
 wine
 
+#Download Qt for windows
+
+RUN mkdir deps &&\
+wget http://download.qt.io/official_releases/qt/5.4/5.4.1/qt-opensource-windows-x86-mingw491_opengl-5.4.1.exe
 
 ########################################################################################
 #Unzip source codes
@@ -43,27 +47,8 @@ RUN echo "Number of processors : $nproc"
 
 RUN mkdir -p vtk-build
 
-WORKDIR VTK
-
-RUN git checkout v6.2.0.rc1
-
-WORKDIR vtk-build
-
-
-########################################################################################
-#Download Qt for windows
-########################################################################################
-RUN wget http://download.qt.io/official_releases/qt/5.4/5.4.1/qt-opensource-windows-x86-mingw491_opengl-5.4.1.exe
-
-
-
-
-
-
-
-
-
-
-
+RUN cd VTK && git checkout v6.2.0
 
 WORKDIR /
+
+
