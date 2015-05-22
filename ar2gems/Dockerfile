@@ -94,8 +94,7 @@ qtcreator
 
 WORKDIR /ar2gems
 
-RUN cd /ar2gems && \
-git checkout develop
+RUN cd /ar2gems 
 
 WORKDIR ar2gems-build
 
@@ -112,7 +111,9 @@ make -j $(nproc)
 WORKDIR /lpm-ufrgs-sgems-plugins
 
 RUN cd /lpm-ufrgs-sgems-plugins && \
-git checkout develop
+cd CALCULATOR && \
+bison Parser.y && \
+flex Lexer.l
 
 WORKDIR /lpm-ufrgs-sgems-plugins-build
 
