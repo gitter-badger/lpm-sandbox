@@ -1,4 +1,6 @@
 # lpm-sandbox
+
+[![Join the chat at https://gitter.im/LPM-UFRGS/lpm-sandbox](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/LPM-UFRGS/lpm-sandbox?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 This repository contains a basic environment to implement geo-statistics algorithms in Linux.
 
 In this image, you can found:
